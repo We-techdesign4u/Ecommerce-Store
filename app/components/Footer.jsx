@@ -16,6 +16,7 @@ const Footer = () => {
             <p
               style={{
                 color: "#d3d3d3",
+                lineHeight: 1.4,
               }}
             >
               There are many variations message of Loren Ipsum available, but
@@ -36,13 +37,13 @@ const Footer = () => {
                 <Link href="./">Home</Link>
               </li>
               <li>
-                <Link href="./">About Us</Link>
+                <Link href="/AboutUs">About Us</Link>
               </li>
               <li>
                 <Link href="/product/allproducts">Products</Link>
               </li>
               <li>
-                <Link href="./">Contact Us</Link>
+                <Link href="/ContactUs">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -57,6 +58,7 @@ const Footer = () => {
             <p
               style={{
                 color: "#d3d3d3",
+                lineHeight: 1.4,
               }}
             >
               +234 80 340 77 133, kindly reach out for more designs like this
