@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Banner } from "../components";
+import { App, Banner } from "../components";
 import {
   AiFillPhone,
   AiFillMail,
@@ -116,7 +117,13 @@ const ContactUs = () => {
               type="text"
               placeholder="Email address"
             />
-            <input className="textField" type="text" placeholder="Message" />
+            <textarea
+              className="textField"
+              // type="text"
+              placeholder="Message"
+              rows={4}
+              cols={40}
+            />
             <p>
               By clicking on submit, you aggree to send a message to the owner
               of this website and will respond via your email as listed above

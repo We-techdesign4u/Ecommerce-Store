@@ -15,12 +15,14 @@ import {
 } from "react-icons/ai";
 import { urlFor } from "@/sanity/lib/client";
 
-import { Qty } from ".";
+import { Qty, TotalProductPrice } from ".";
 import { useStateContext } from "../context/StateContextProvider";
 
 import { IncQty } from ".";
 import { DecQty } from ".";
 import { TiDeleteOutline } from "react-icons/ti";
+
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -33,6 +35,26 @@ const Cart = () => {
     isShown,
     setIsShown,
   } = useStateContext();
+
+  const config = {
+    public_key: "FLWPUBK_TEST-91f5e066e0f3875c7e74bd5eaae2a5e8-X",
+    tx_ref: Date.now(),
+    amount: totalProdutPrice,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customer: {
+      email: "g@gmail.com",
+      phone_number: "0804858588",
+      name: "Nallldii",
+    },
+    customizations: {
+      title: "My Bag Store",
+      description: "",
+      logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
 
   return (
     <div className="cart" ref={cartRef}>
@@ -146,7 +168,19 @@ const Cart = () => {
               <span onClick={() => setIsShown(false)}>CONTINUE SHOPPING</span>
             )}
             {cartItems.length >= 1 && (
-              <span onClick={() => setIsShown(false)}>CHECKOUT</span>
+              <span
+                onClick={() =>
+                  handleFlutterPayment({
+                    callback: (response) => {
+                      console.log(response);
+                      closePaymentModal();
+                    },
+                    onClose: () => {},
+                  })
+                }
+              >
+                CHECKOUT
+              </span>
             )}
           </div>
         </div>
