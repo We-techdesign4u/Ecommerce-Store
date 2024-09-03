@@ -129,7 +129,6 @@ const Cart = () => {
                         className="CartProdDelB"
                         onClick={() => remFromCart(item)}
                       >
-                        {/* X */}
                         <TiDeleteOutline />
                       </span>
                     </div>

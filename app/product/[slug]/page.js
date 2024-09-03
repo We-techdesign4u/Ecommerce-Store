@@ -25,12 +25,6 @@ async function Page({ params }) {
   const slugData = newData.props.res;
   const products = newData.props.products;
   const data = { data: { products } };
-  // console.log(slugData);
-  // const { index } = Indexs;
-
-  // const data = props;
-
-  // console.log(data.data.products[0].image);
 
   return (
     <div>
@@ -112,11 +106,6 @@ async function getProduct({ params }) {
   const products = await client.fetch(`*[_type == "product"]`, {
     next: { cache: "force-cache" },
   });
-
-  // const newData = JSON.stringify(res);
-  // const newData = JSON.parse(res);
-  // const newData = JSON.parse(JSON.stringify(res));
-  // const newData = structuredClone(res);
 
   return { props: { res, products } };
 }
