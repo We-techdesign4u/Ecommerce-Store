@@ -26,12 +26,6 @@ async function Page({ params }) {
   const slugData = newData.props.res;
   const products = newData.props.products;
   const data = { data: { products } };
-  // console.log(slugData);
-  // const { index } = Indexs;
-
-  // const data = props;
-
-  // console.log(data.data.products[0].image);
 
   return (
     <div>

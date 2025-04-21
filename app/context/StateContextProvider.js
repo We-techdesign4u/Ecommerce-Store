@@ -1,18 +1,48 @@
 "use client";
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 
 const context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [qty, setQty] = useState(1);
-  const [totalProdutPrice, setTotalProductPrice] = useState(0);
-  const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [totalQuantities, setTotalQuantities] = useState(0);
-  const [isShown, setIsShown] = useState(false);
-  const [filters, setFilters] = useState([]);
-  const [colFilters, setColFilters] = useState([]);
+  const [qty, setQty] = useState(() => (typeof window !== "undefined" ? 1 : 1)); // Or any client-specific initial value
+  const [totalProdutPrice, setTotalProductPrice] = useState(() =>
+    typeof window !== "undefined" ? 0 : 0
+  );
+  const [showCart, setShowCart] = useState(() =>
+    typeof window !== "undefined" ? false : false
+  );
+  const [cartItems, setCartItems] = useState(() =>
+    typeof window !== "undefined" ? [] : []
+  );
+  const [totalQuantities, setTotalQuantities] = useState(() =>
+    typeof window !== "undefined" ? 0 : 0
+  );
+  const [isShown, setIsShown] = useState(() =>
+    typeof window !== "undefined" ? false : false
+  );
+  const [filters, setFilters] = useState(() =>
+    typeof window !== "undefined" ? [] : []
+  );
+  const [colFilters, setColFilters] = useState(() =>
+    typeof window !== "undefined" ? [] : []
+  );
+
   // const { filtered, setFiltered } = useState([]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && localStorage.getItem("cartItems")) {
+      setCartItems(JSON.parse(localStorage.getItem("cartItems")));
+      // You might also need to update totalQuantities and totalProdutPrice here
+      // based on the items in localStorage
+    }
+  }, []);
+
+  // Example: Update localStorage when cartItems change
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
 
   const hadleShowCart = (data) => {
     // setShowCart(data);
@@ -117,13 +147,13 @@ export const StateContext = ({ children }) => {
   ///
 
   const incQty = () => {
-    setQty(qty + 1);
+    setQty((prevQty) => prevQty + 1);
   };
 
   const decQty = () => {
-    setQty((qty) => {
-      if (qty < 2) return 1;
-      return qty - 1;
+    setQty((prevQty) => {
+      if (prevQty < 2) return 1;
+      return prevQty - 1;
     });
   };
 

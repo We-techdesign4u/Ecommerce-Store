@@ -82,6 +82,8 @@ const Cart = () => {
           </span>
 
           <div className="cartScroll">
+            {/**/}
+
             <div className="NoProductinCart">
               {cartItems.length < 1 && (
                 <div className="empty-cart">
@@ -90,6 +92,20 @@ const Cart = () => {
                 </div>
               )}
             </div>
+
+            {/* 
+            <div className="NoProductinCart">
+
+              {cartItems.length < 1 && (
+                <div className="empty-cart">
+                  <AiOutlineShopping size={150} />
+                  <p style={{ color: "white" }}>Your shopping bag is empty</p>
+                </div>
+              )}
+
+
+            </div> */}
+
             <div className="">
               {cartItems.length >= 1 &&
                 cartItems.map((item) => (
@@ -151,7 +167,6 @@ const Cart = () => {
                         className="CartProdDelB"
                         onClick={() => remFromCart(item)}
                       >
-                        {/* X */}
                         <TiDeleteOutline />
                       </span>
                     </div>
