@@ -14,15 +14,7 @@ const Product = (props) => {
 
   const scrollableProdRef = useRef(null);
 
-  // const handleScrollLeft = () => {
-  //   scrollableDivRef.current.scrollLeft -= 270;
-  // };
-
-  // const handleScrollRight = () => {
-  //   scrollableDivRef.current.scrollLeft += 270;
-  // };
-
-  // console.log(urlFor(props.data.products[0].image));
+  // console.log("data", data);
 
   return (
     <div className="products">
@@ -37,7 +29,7 @@ const Product = (props) => {
 
       <div className="productbox" ref={scrollableProdRef}>
         {data.products.map((product) => (
-          <div className="Product" key={product.id}>
+          <div className="Product" key={product._id}>
             <Link
               style={{
                 position: "relative",

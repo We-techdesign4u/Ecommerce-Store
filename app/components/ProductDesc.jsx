@@ -23,7 +23,7 @@ const ProductDesc = (props) => {
       </div>
       <div className="productDescBox" ref={scrollableRecProdRef}>
         {data.products.map((product) => (
-          <div key={product.id}>
+          <div key={product._id}>
             <Link href={`/product/${product.slug.current}`}>
               <div className="ProductDescContainer">
                 <img
@@ -37,7 +37,7 @@ const ProductDesc = (props) => {
                   <p style={{ margin: 0, lineHeight: 1.3, paddingBottom: 10 }}>
                     {product.desc}
                   </p>
-                  <a>Read More</a>
+                  <p>Read More</p>
                 </div>
               </div>
             </Link>
