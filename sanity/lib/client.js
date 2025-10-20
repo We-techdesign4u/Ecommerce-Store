@@ -6,7 +6,7 @@ import { apiVersion, dataset, projectId, useCdn, token } from "../env";
 import { Truculenta } from "next/font/google";
 
 export const client = createClient({
-  projectId: "zc4qse6u",
+  projectId: "oglawiyf",
   dataset: "production",
   apiVersion: "2024-06-12",
   useCdn: false,

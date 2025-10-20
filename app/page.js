@@ -14,6 +14,7 @@ import { StateContext } from "./context/StateContextProvider";
 
 async function Home() {
   const data = await getData();
+  console.log("bag data", data);
 
   return (
     // <RootLayout>
@@ -84,9 +85,7 @@ export default Home;
 export async function getData() {
   // Fetch data from external API
 
-  const products = await client.fetch('*[_type == "product"]', {
-    next: { cache: "no-store" },
-  });
+  const products = await client.fetch('*[_type == "product"]');
 
   return { products };
 }
