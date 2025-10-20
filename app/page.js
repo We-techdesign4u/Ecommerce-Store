@@ -84,9 +84,7 @@ export default Home;
 export async function getData() {
   // Fetch data from external API
 
-  const products = await client.fetch('*[_type == "product"]', {
-    next: { cache: "no-store" },
-  });
+  const products = await client.fetch('*[_type == "product"]');
 
   return { products };
 }
