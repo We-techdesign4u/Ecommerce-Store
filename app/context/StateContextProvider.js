@@ -27,17 +27,12 @@ export const StateContext = ({ children }) => {
     typeof window !== "undefined" ? [] : []
   );
 
-  // const { filtered, setFiltered } = useState([]);
-
   useEffect(() => {
     if (typeof window !== "undefined" && localStorage.getItem("cartItems")) {
       setCartItems(JSON.parse(localStorage.getItem("cartItems")));
-      // You might also need to update totalQuantities and totalProdutPrice here
-      // based on the items in localStorage
     }
   }, []);
 
-  // Example: Update localStorage when cartItems change
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -45,7 +40,6 @@ export const StateContext = ({ children }) => {
   }, [cartItems]);
 
   const hadleShowCart = (data) => {
-    // setShowCart(data);
     setIsShown(data);
   };
 
@@ -57,7 +51,35 @@ export const StateContext = ({ children }) => {
     scrollableDivRef.current.scrollLeft += 270;
   };
 
-  /////
+  /////Mine
+  // const addToCart = (slugData, quantity) => {
+  //   const checkProductInCart = cartItems.find(
+  //     (item) => item._id === slugData._id
+  //   );
+  //   const addedItemPrice = slugData.price * quantity;
+
+  //   if (checkProductInCart) {
+  //     setTotalQuantities((totalQuantities) => totalQuantities + quantity);
+
+  //     const updatedCartItems = cartItems.map((cartProduct) => {
+  //       if (cartProduct._id === slugData._id)
+  //         return { ...cartProduct, quantity: cartProduct.quantity + quantity };
+  //     });
+
+  //     // console.log(cartProduct);
+  //     setCartItems(updatedCartItems);
+  //   } else {
+  //     slugData.quantity = quantity;
+
+  //     setTotalProductPrice(
+  //       (totalProdutPrice) => totalProdutPrice + addedItemPrice
+  //     );
+  //     setTotalQuantities((totalQuantities) => totalQuantities + quantity);
+  //     setCartItems([...cartItems, { ...slugData }]);
+  //   }
+  // };
+
+  //// Ai
   const addToCart = (slugData, quantity) => {
     const checkProductInCart = cartItems.find(
       (item) => item._id === slugData._id
@@ -65,13 +87,20 @@ export const StateContext = ({ children }) => {
     const addedItemPrice = slugData.price * quantity;
 
     if (checkProductInCart) {
+      setTotalProductPrice(
+        (totalProdutPrice) => totalProdutPrice + addedItemPrice
+      );
       setTotalQuantities((totalQuantities) => totalQuantities + quantity);
 
       const updatedCartItems = cartItems.map((cartProduct) => {
-        if (cartProduct._id === slugData._id)
+        if (cartProduct._id === slugData._id) {
+          // Return the updated product object
           return { ...cartProduct, quantity: cartProduct.quantity + quantity };
+        }
+        // 💡 FIX: Return the original product object for non-matching IDs
+        return cartProduct;
       });
-      // console.log(cartProduct);
+
       setCartItems(updatedCartItems);
     } else {
       slugData.quantity = quantity;
@@ -82,8 +111,6 @@ export const StateContext = ({ children }) => {
       setTotalQuantities((totalQuantities) => totalQuantities + quantity);
       setCartItems([...cartItems, { ...slugData }]);
     }
-    // console.log(cartItems[0]);
-    // alert();
   };
 
   /////

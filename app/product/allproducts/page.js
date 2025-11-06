@@ -45,22 +45,17 @@ async function page() {
   const ProductOptionsLabel = "Product";
 
   return (
-    <div>
+    <div className=" w-screen">
       <HeroBanner />
-      <div className="searchSection">
-        <div className="filtersContainer">
+      <div className="bg-primary-lightbg w-full px-5 sm:px-[132px] block relative items-center">
+        <div className=" *:py-2 sm:flex flex-row block py-[45px] w-full">
           <CustomDropdown Options={BrandOptions} name={BrandOptionsLabel} />
           <CustomDropdown Options={ColorOptions} name={ColorOptionsLabel} />
           <CustomDropdown Options={ProductOptions} name={ProductOptionsLabel} />
         </div>
-        <Filtering />
 
-        <h4>Showing results for Gucci Bags </h4>
-        <div className="resultDetails">
-          <div className="totalProductShown">
-            <p>Products 500</p>
-          </div>
-          <div className="sortBy">Sort by:</div>
+        <div className="sm:flex pb-5">
+          <p>Showing results for &nbsp; &nbsp;</p> <Filtering />
         </div>
 
         <FilteredProduct data={data} />

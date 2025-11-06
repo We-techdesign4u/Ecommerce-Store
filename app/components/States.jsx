@@ -84,14 +84,21 @@ export const Thumbnails = ({ slugData }) => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="prodPleft">
-      <div className="prodPimg1box">
-        <img className="prodPimg1" src={urlFor(slugData.image[index]).url()} />
+    <div className="flex w-full sm:w-[675px] py-10 sm:py-0 flex-col justify-center items-center">
+      <div className=" w-full flex sm:w-[620px] h-[400px] items-center justify-center">
+        <img
+          className="h-[500px] object-cover "
+          src={urlFor(slugData.image[index]).url()}
+        />
       </div>
-      <div className="prodPAllimg2box">
+      <div className="h-[155px] sm:w-[620px]  w-full overflow-x-scroll scroll-smooth mt-[45px] flex items-center justify-center">
         {slugData.image?.map((item, i) => (
           <img
-            className={i === index ? "prodPimg22" : "prodPimg2"}
+            className={
+              i === index
+                ? "opacity-1 border-[1px] border-Primary h-[135px] w-[113px] object-cover m-[5px] rounded-[5px] cursor-pointer "
+                : "opacity-55 active:opacity-1 border-[1px] border-red-700 border-none h-[135px] w-[113px] object-cover m-[5px] rounded-[5px] cursor-pointer"
+            }
             src={urlFor(item).url()}
             key={i}
             onClick={() => setIndex(i)}
@@ -186,24 +193,32 @@ export const FilteredProduct = (data) => {
   // const filtereditems = data.products.filter((item) => item.name !== item.slug);
 
   return (
-    <div className="allProductContainer">
+    <div className=" grid gap-x-[30px] gap-y-[20px] grid-cols-1 items-center justify-center sm:grid-cols-4 pb-[90px]">
       {filtered.map((product) => (
         <Link href={`/product/${product.slug.current}`}>
-          <div className="allProduct" key={product._id}>
-            <div className="allProductImg">
-              <AiFillPlusCircle className="allProductAddtoCart" />
-              <img src={urlFor(product.image[0]).url()} />
+          <div
+            className="block bg-white w-[280px] border-[0.5px] border-Primary-light rounded-[10px] transform transition duration-300 ease-in-out hover:shadow-md "
+            key={product._id}
+          >
+            <div className="rounded-t-[10px] relative w-full h-[280px] bg-[#dce5e4] ">
+              <AiFillPlusCircle className="absolute top-[10px] right-[10px] w-[20px] h-[20px]  text-primary-dark transition transform z-10 duration-500 ease-in-out hover:scale-110" />
+              <img
+                className="h-[280px] w-[220px] object-center object-cover transition transform duration-500 ease-in-out hover:scale-110"
+                src={urlFor(product.image[0]).url()}
+              />
             </div>
-            <div className="allProductRatingCont">
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <p>40</p>
+            <div className="px-3">
+              <div className="flex items-center h-[30px] *:w-[15px]">
+                <AiFillStar className=" " />
+                <AiFillStar className="" />
+                <AiFillStar className="" />
+                <AiFillStar className="" />
+                <AiFillStar className="" />
+                <p>40</p>
+              </div>
+              <p className="">{product.name}</p>
+              <h4 className="py-3">$ {product.price}.00</h4>
             </div>
-            <p className="allProductName">{product.name}</p>
-            <h4 className="allProductPrice">$ {product.price}.00</h4>
           </div>
         </Link>
       ))}

@@ -29,10 +29,10 @@ async function Page({ params }) {
 
   return (
     <div>
-      <div className="prodPbox">
+      <div className="sm:flex w-screen sm:flex-row block bg-primary-lightbg sm:py-[100px] py-[50px] px-5 sm:px-[132px]">
         <Thumbnails slugData={slugData} />
 
-        <div className="prodPright">
+        <div className="flex sm:w-[540px] w-full flex-col items-center">
           <div className="prodDetailsBox">
             <h2 style={{ marginTop: 0, fontSize: 26 }}>{slugData.name}</h2>
             <h2 style={{ fontSize: 26 }}>$ {slugData.price}.00</h2>
@@ -78,7 +78,7 @@ async function Page({ params }) {
         </div>
       </div>
 
-      <div className="sect4">
+      <div className="h-[300px] bg-primary-lightbg px-132px flex relative items-center">
         <ProductDesc data={data.data} />
       </div>
     </div>

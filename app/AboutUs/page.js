@@ -1,42 +1,29 @@
 import React from "react";
-import { Banner, WhyChooseUs } from "../components";
+import { Banner, Header, WhyChooseUs } from "../components";
 
 const AboutUs = () => {
   return (
-    <div>
-      <Banner />
-      <div className="aboutUsContainer">
-        <div style={{ width: 400 }}>
-          <h2 style={{ color: "#d3d3d3" }} className="aboutUSHeading">
-            About Us
-          </h2>
-          <p
-            style={{
-              color: "#d3d3d3",
-            }}
-          >
-            Lourem Ipsum taka impezum lazary dammading trycopium lez pesizium
-            centre monterio busterico tantropica
+    <div className="w-screen pt-14">
+      <Header heading={"About Us"} />
+      <div className=" w-full px-5 sm:px-[132px] pt-14 pb-8 sm:flex block relative items-center justify-between">
+        <div className="sm:w-[630px] h-[450px] relative w-full sm:block flex justify-center items-center sm:h-[700px]">
+          <img
+            className="sm:w-[280px] w-[240px] absolute -z-9 left-0 top-0 "
+            src="/images/Element.png"
+          />
+          <img
+            className="w-[300px] object-cover sm:h-[615px] absolute  sm:w-[550px] object-left-top rounded-[10px] sm:absolute bottom-0 right-0"
+            src="/images/bags5.jpg"
+          />
+        </div>
+        <div className="sm:w-[440px] w-full flex flex-col sm:h-[815px]  justify-center py-10">
+          <h2 style={{ paddingBottom: 30 }}>I'm Ganiyu</h2>
+          <p className="text-center">
+            These bags are specially made and crafted with quality materials and
+            special made for you, don't get it twistedquality materials and
+            special made for you, don't get it twisted made and crafted with
+            quality materials and special made for you,.
           </p>
-        </div>
-      </div>
-      <div className="sect3" style={{ justifyContent: "left" }}>
-        <div className="sect3Left" style={{ width: 650 }}>
-          <div className="sect3RImgWrap">
-            <img className="element1" src="/images/Element.png" />
-            <img className="img2" src="/images/bags.jpg" />
-          </div>
-        </div>
-        <div className="sect3Right">
-          <div>
-            <h2 style={{ paddingBottom: 30 }}>I'm Ganiyu</h2>
-            <p style={{ paddingBottom: 30 }}>
-              These bags are specially made and crafted with quality materials
-              and special made for you, don't get it twistedquality materials
-              and special made for you, don't get it twisted made and crafted
-              with quality materials and special made for you,.
-            </p>
-          </div>
         </div>
       </div>
       <WhyChooseUs />
