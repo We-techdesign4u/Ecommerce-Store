@@ -21,7 +21,7 @@ const Product = (props) => {
   // console.log("data", data);<div className=" w-screen py-10 sm:py-0 sm:w-[960px]">
 
   return (
-    <div className="w-screen ml-10 pr-10 sm:pr-0 sm:ml-5 sm:w-[960px] sm:h-[450px] relative">
+    <div className="mt-10 sm:mt-0 w-screen ml-10 pr-10 sm:pr-0 sm:ml-5 sm:w-[960px] sm:h-[450px] relative">
       <div className="  absolute z-10  top-[50%] -ml-5  ">
         <span
           className=" hover:scale-110 ease-in-out duration-400 transition transform cursor-pointer inline-flex h-[50px] w-[50px] items-center justify-center bg-white rounded-full shadow-md"
@@ -44,7 +44,7 @@ const Product = (props) => {
               className="relative sm:mt-[160px]"
               href={`/product/${product.slug.current}`}
             >
-              <div className=" group-hover:bg-[#dce5e4] w-[290px] sm:h-[243px]  rounded-[10px] bg-none flex flex-col items-center relative ">
+              <div className=" sm:group-hover:bg-[#dce5e4] w-[290px] sm:h-[243px]  rounded-[10px] bg-none flex flex-col items-center relative ">
                 <img
                   className=" hover:scale-110 object-cover sm:h-[270px] h-[280px]  w-[75%] sm:-mt-[142px] overflow-hidden object-center relative sm:mb-[10px] transition transform duration-300 ease-in-out"
                   src={urlFor(product.image && product.image[0])}

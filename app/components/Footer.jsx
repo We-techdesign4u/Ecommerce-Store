@@ -74,9 +74,10 @@ const Footer = () => {
 
           <form className="flex flex-row justify-between items-center p-[5px] h-[60px] sm:w-[350px] w-full bg-Primary-light rounded-[50px]">
             <input
-              className=" h-[40px] rounded-0 border-0 active:border-transparent border-transparent w-fit bg-transparent"
+              className=" placeholder:text-gray-800 h-[40px] pl-2 rounded-0 border-0 active:border-transparent border-transparent w-fit bg-transparent"
               type="text"
               placeholder="Enter your email"
+              color=""
             />
 
             <button className=" flex items-center justify-center w-[85px] h-[40px] bg-primary-dark text-[16px] text-white rounded-[50px] ">
