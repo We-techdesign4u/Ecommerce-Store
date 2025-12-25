@@ -12,7 +12,7 @@ const ProductDesc = (props) => {
   const scrollableRecProdRef = useRef(null);
 
   return (
-    <section className="sm:h-[300px] h-auto  w-screen bg-primary-lightbg px-8 sm:px-[132px] py-10">
+    <section className="w-screen bg-[#d7d7d7] px-8 sm:px-[132px] py-10">
       <div className="flex w-full flex-row sm:w-[1250px] relative">
         <div className="  absolute z-10  top-[40%] -ml-[20px] ">
           <span

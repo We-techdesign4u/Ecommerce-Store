@@ -11,6 +11,9 @@ import {
   WhyChooseUs,
   SectionTwo,
   ModernBag,
+  Brands,
+  Sales,
+  BottomBanner,
 } from "./components";
 import { StateContext } from "./context/StateContextProvider";
 
@@ -18,16 +21,19 @@ async function Home() {
   const data = await getData();
 
   return (
-    <>
+    <div className="relative">
       <HeroBanner />
+      <Brands />
 
       <SectionTwo data={data} />
       <WhyChooseUs />
 
       <ModernBag />
 
+      <Sales />
+      <BottomBanner />
       <ProductDesc data={data}></ProductDesc>
-    </>
+    </div>
   );
 }
 

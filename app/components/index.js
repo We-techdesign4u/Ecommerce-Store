@@ -17,6 +17,9 @@ export { default as Header } from "./Header";
 export { default as FormFieldText } from "./FormFieldText";
 export { default as Button } from "./Button";
 export { default as ShowCart } from "./ShowCart";
+export { default as Brands } from "./Brands";
+export { default as Sales } from "./Sales";
+export { default as BottomBanner } from "./BottomBanner";
 export {
   IncQty,
   DecQty,

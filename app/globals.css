@@ -933,10 +933,10 @@ p {
 .CartContentBox {
   /* width: 520px; */
   background-color: rgb(69, 64, 61);
-  height: 96%;
+
   /* display: flex; */
   /* justify-content: left; */
-  position: relative;
+
   /* margin-left: 30px; */
   box-shadow:
     -4px 2px 6px 0px rgba(0, 0, 0, 0.2),

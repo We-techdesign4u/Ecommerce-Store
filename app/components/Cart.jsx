@@ -57,8 +57,9 @@ const Cart = () => {
   const handleFlutterPayment = useFlutterwave(config);
 
   return (
-    <div>
-      <div className="sm:hidden" ref={cartRef}>
+    <div className="">
+      {/**mobileCart */}
+      <div className="lg:hidden" ref={cartRef}>
         <div
           className={
             isShown
@@ -185,19 +186,12 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="cart hidden sm:flex " ref={cartRef}>
+      <div className=" hidden lg:flex " ref={cartRef}>
         <div
           className={
             isShown
-              ? " block w-screen h-screen absolute bg-black opacity-45"
-              : " hidden"
-          }
-        ></div>
-        <div
-          className={
-            isShown
-              ? "flex transition ease-in-out duration-500 transform absolute h-[700px] delay-200 top-[46px] -right-[540px] -translate-x-[530px]"
-              : " flex transition ease-in-out duration-500 transform absolute h-[700px] delay-200 top-[46px] -right-[540px] translate-x-[0px] "
+              ? "flex transition ease-in-out duration-500 transform absolute h-[600px] delay-200 top-[86px] -right-[550px] -translate-x-[540px]"
+              : " flex transition ease-in-out duration-500 transform absolute h-[600px] delay-200 top-[86px] -right-[550px] translate-x-[0px] "
           }
         >
           <div className="elementBox">
@@ -218,13 +212,13 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="CartContentBox">
+          <div className="CartContentBox h-full  relative ">
             <span className="ContinueShop" onClick={() => setIsShown(false)}>
               <AiOutlineCaretLeft style={{ marginRight: 10 }} />
               <p>Back to shop</p>
             </span>
 
-            <div className="cartScroll">
+            <div className=" h-[450px]  flex flex-col overflow-y-scroll overflow-x-hidden">
               <div className="NoProductinCart">
                 {cartItems.length < 1 && (
                   <div className="empty-cart">
