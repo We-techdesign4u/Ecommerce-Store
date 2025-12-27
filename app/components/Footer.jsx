@@ -8,10 +8,10 @@ import {
 
 const Footer = () => {
   return (
-    <section className=" w-screen bg-Primary px-5 sm:pt-[80px] pt-[40px] pb-[20px] sm:pb-[50px] sm:px-[132px]">
+    <section className=" w-screen bg-black px-5 sm:pt-[80px] pt-[40px] pb-[20px] sm:pb-[50px] sm:px-[132px]">
       <div className="sm:flex sm:flex-row  justify-between">
         <div className=" w-[300px]">
-          <h2 className="footerLogo ">MY STORE</h2>
+          <img src="images/baggywhite.png" className="w-[120px] " alt="" />
           <p
             style={{
               color: "#d3d3d3",

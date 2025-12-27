@@ -4,7 +4,7 @@ import { useState, createContext, useContext, useEffect } from "react";
 const context = createContext();
 
 export const StateContext = ({ children }) => {
-  const [qty, setQty] = useState(() => (typeof window !== "undefined" ? 1 : 1)); // Or any client-specific initial value
+  const [qty, setQty] = useState(() => (typeof window !== "undefined" ? 1 : 1));
   const [totalProdutPrice, setTotalProductPrice] = useState(() =>
     typeof window !== "undefined" ? 0 : 0
   );
@@ -50,34 +50,6 @@ export const StateContext = ({ children }) => {
   const handleScrollRight = (scrollableDivRef) => {
     scrollableDivRef.current.scrollLeft += 270;
   };
-
-  /////Mine
-  // const addToCart = (slugData, quantity) => {
-  //   const checkProductInCart = cartItems.find(
-  //     (item) => item._id === slugData._id
-  //   );
-  //   const addedItemPrice = slugData.price * quantity;
-
-  //   if (checkProductInCart) {
-  //     setTotalQuantities((totalQuantities) => totalQuantities + quantity);
-
-  //     const updatedCartItems = cartItems.map((cartProduct) => {
-  //       if (cartProduct._id === slugData._id)
-  //         return { ...cartProduct, quantity: cartProduct.quantity + quantity };
-  //     });
-
-  //     // console.log(cartProduct);
-  //     setCartItems(updatedCartItems);
-  //   } else {
-  //     slugData.quantity = quantity;
-
-  //     setTotalProductPrice(
-  //       (totalProdutPrice) => totalProdutPrice + addedItemPrice
-  //     );
-  //     setTotalQuantities((totalQuantities) => totalQuantities + quantity);
-  //     setCartItems([...cartItems, { ...slugData }]);
-  //   }
-  // };
 
   //// Ai
   const addToCart = (slugData, quantity) => {

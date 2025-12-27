@@ -10,7 +10,7 @@ import {
 const WhyChooseUs = () => {
   return (
     <section className="bg-[#F5F5F5] w-screen ">
-      <div className="w-full relative flex flex-col-reverse lg:flex-row lg:px-[180px] px-5 items-center py-20 lg:py-[180px]">
+      <div className="w-full relative space-y-[50px] flex flex-col-reverse lg:flex-row lg:px-[180px]  px-5 items-center py-[100px]  lg:py-[180px]">
         <div className=" *:text-center lg:*:text-left lg:w-[560px] space-y-7">
           <p className="text-[32px] font-bold leading-normal text-black">
             Why Choose Us
@@ -74,12 +74,13 @@ const WhyChooseUs = () => {
           </div>
         </div>
 
-        <div className="relative  w-fit flex justify-center items-center lg:h-[500px]">
-          <p className="text-[165px] leading-tight font-bold absolute -top-[80px] -z-0 text-black">
+        <div className="relative h-[400px]  w-fit flex justify-center items-center lg:h-[500px]">
+          <p className="lg:text-[165px] text-[100px] leading-tight font-bold absolute lg:-top-[80px] top-0 -z-0 text-black">
             FENDI
           </p>
+          <div className="w-[590px]"></div>
           <img
-            className="w-[590px] object-cover lg:h-[650px] lg:w-[590px] object-center "
+            className="w-[390px] absolute z-10 object-cover lg:h-[650px] lg:w-[590px] object-center "
             src="/images/bags5.png"
           />
         </div>

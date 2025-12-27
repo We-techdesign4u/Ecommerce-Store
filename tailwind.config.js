@@ -11,6 +11,11 @@ module.exports = {
         "primary-lightbg": "#f0f2f1",
         secondary: "#e0c40f",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        Quicksand: ["Quicksand", "sans-serif"],
+        Phudu: ["Phudu", "sans-serif"],
+      },
     },
   },
   plugins: [],

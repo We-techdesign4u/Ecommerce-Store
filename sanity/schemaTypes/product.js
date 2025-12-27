@@ -31,5 +31,11 @@ export const product = {
       title: "Desc",
       type: "string",
     },
+    {
+      name: "color",
+      title: "Color",
+      type: "array",
+      of: [{ type: "string" }],
+    },
   ],
 };

@@ -8,13 +8,14 @@ import {
 const ModernBag = () => {
   return (
     <section className=" w-screen  ">
-      <div className="flex-col flex w-full lg:flex-row h-fit relative items-center justify-between py-20 lg:py-[180px]  px-5 lg:px-[180px]">
-        <div className="flex justify-center items-center bg-slate-300 w-full relative h-[1010px] lg:h-auto">
-          <p className="text-[165px] -rotate-90 leading-tight font-bold absolute -left-[80px]  -z-0 text-black">
+      <div className="flex-col flex w-full lg:flex-row h-fit relative items-center justify-between py-10 lg:py-[180px]  px-5 lg:px-[180px]">
+        <div className="flex  justify-center items-center  w-full relative  h-auto">
+          <p className="lg:text-[165px] text-[100px] -z-10 -rotate-90 leading-tight font-bold absolute -left-[80px] text-black">
             GUCCI
           </p>
+
           <img
-            className=" object-cover bg-slate-100 w-[280px] lg:h-[585px] lg:w-[512px] object-center"
+            className=" object-cover  w-[320px] lg:h-[585px] lg:w-[512px] object-center"
             src="/images/bag4.png"
           />
         </div>

@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const SectionTwo = ({ data }) => {
   return (
-    <section className=" lg:h-screen w-screen flex px-5 items-center lg:px-[180px] py-20">
-      <div className="flex flex-col w-full sm:flex-row  ">
-        <div className="items-center space-y-6 lg:w-[300px]  w-full sm:items-start">
+    <section className=" w-screen px-5 lg:px-[180px] py-[150px]">
+      <div className="  py-5 flex flex-col lg:flex-row  space-y-[50px] lg:space-y-0  w-[100%]">
+        <div className="items-center space-y-6 lg:max-w-[300px]   lg:pr-10  w-full sm:items-start">
           <p className="font-bold leading-none text-black text-[35px] text-center sm:text-left">
             Crafted with excellent material.
           </p>

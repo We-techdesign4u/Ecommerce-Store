@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "tailwindcss"; */
 
 /* @import "tailwindcss"; */
 /* :root {
@@ -9,9 +12,9 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;ddfd
-} */
+} //*/
 
-@font-face {
+/* @font-face {
   font-family: "inter";
   src:
     local("inter"),
@@ -25,7 +28,7 @@
     local("inter"),
     url(./fonts/InterBold.otf) format("opentype");
   font-weight: bold;
-}
+} */
 
 html,
 body {

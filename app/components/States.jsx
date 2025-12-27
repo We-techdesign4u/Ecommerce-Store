@@ -16,13 +16,13 @@ import {
 } from "react-icons/ai";
 
 import Link from "next/link";
-import { Cart } from ".";
+
 import { useStateContext } from "../context/StateContextProvider";
 import { useState, useEffect } from "react";
-
-const Qty = () => {
+import { motion, AnimatePresence } from "motion/react";
+const Qty = ({ color }) => {
   const { qty } = useStateContext();
-  return <p>{qty}</p>;
+  return <p className={`${color}`}>{qty}</p>;
 };
 export default Qty;
 
@@ -63,18 +63,24 @@ export const DecQty = () => {
 };
 
 export const TotalProductPrice = ({ slugData }) => {
-  const { qty, addToCart, setShowCart } = useStateContext();
+  const { qty } = useStateContext();
+
+  return (
+    <span className="text-white text-[12px]">${slugData.price * qty}.00</span>
+  );
+};
+
+export const BuyNow = ({ slugData }) => {
+  const { qty, addToCart, setShowCart, setIsShown } = useStateContext();
 
   return (
     <button
-      className="addToCart"
+      className="px-5 text-black text-nowrap w-[150px] flex justify-center bg-[#B6FF82] py-2 rounded-[10px] text-[12px]"
       onClick={() => {
         addToCart(slugData, qty);
-        setShowCart(true);
+        setIsShown(true);
       }}
     >
-      ${slugData.price * qty}.00&nbsp;&nbsp;&nbsp;-
-      <AiOutlineTag style={{ fontSize: 18, marginRight: 8, marginLeft: 10 }} />
       BUY NOW
     </button>
   );
@@ -83,26 +89,63 @@ export const TotalProductPrice = ({ slugData }) => {
 export const Thumbnails = ({ slugData }) => {
   const [index, setIndex] = useState(0);
 
+  const [direction, setDirection] = useState(0);
+
+  const handleSelect = (i) => {
+    setDirection(i > index ? 1 : -1);
+    setIndex(i);
+  };
+  console.log(slugData, "checkcolor");
+  const colorMap = {
+    purple: "bg-purple-500",
+    red: "bg-red-500",
+    blue: "bg-blue-500",
+    gren: "bg-green-500",
+  };
+
   return (
-    <div className="flex w-full sm:w-[675px] py-10 sm:py-0 flex-col justify-center items-center">
-      <div className=" w-full flex sm:w-[620px] h-[400px] items-center justify-center">
-        <img
-          className="h-[500px] object-cover "
-          src={urlFor(slugData.image[index]).url()}
-        />
-      </div>
-      <div className="h-[155px] sm:w-[620px]  w-full overflow-x-scroll scroll-smooth mt-[45px] flex items-center justify-center">
-        {slugData.image?.map((item, i) => (
-          <img
-            className={
-              i === index
-                ? "opacity-1 border-[1px] border-Primary h-[135px] w-[113px] object-cover m-[5px] rounded-[5px] cursor-pointer "
-                : "opacity-55 active:opacity-1 border-[1px] border-red-700 border-none h-[135px] w-[113px] object-cover m-[5px] rounded-[5px] cursor-pointer"
-            }
-            src={urlFor(item).url()}
-            key={i}
-            onClick={() => setIndex(i)}
+    <div className="flex w-full h-full space-y-10 flex-col justify-center items-center">
+      <div className=" w-full flex  h-[400px] items-center justify-center overflow-hidden">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.img
+            key={index}
+            src={urlFor(slugData.image[index]).url()}
+            custom={direction}
+            initial={{
+              x: direction > 0 ? 300 : -300,
+              opacity: 0,
+              scale: 1,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            exit={{
+              x: direction > 0 ? 300 : 300,
+              y: direction > 0 ? 300 : 300,
+              opacity: 0,
+              scale: 0,
+            }}
+            transition={{
+              duration: 0.4,
+              ease: "easeInOut",
+            }}
+            className="absolute max-h-[500px] max-w-[500px] left-[150px] object-contain"
           />
+        </AnimatePresence>
+      </div>
+      <div className="h-[40px] space-x-2  w-full flex items-center justify-center">
+        {slugData.color?.map((item, i) => (
+          <span
+            style={{ backgroundColor: `${item}` }}
+            key={i}
+            onClick={() => handleSelect(i)}
+            // style={{ backgroundColor: `${item.color}` }}
+            className={`h-[25px] w-[25px] m-[5px] rounded-[5px] cursor-pointer transition
+       
+      ${i === index ? "opacity-100 ring-2 ring-black" : "opacity-55"}
+    `}
+          ></span>
         ))}
       </div>
     </div>
@@ -114,7 +157,7 @@ export const AddToCartButton = ({ slugData }) => {
 
   return (
     <button
-      className="buyNow"
+      className=" flex"
       type="button"
       onClick={() => addToCart(slugData, qty)}
     >

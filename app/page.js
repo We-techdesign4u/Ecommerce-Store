@@ -32,7 +32,6 @@ async function Home() {
 
       <Sales />
       <BottomBanner />
-      <ProductDesc data={data}></ProductDesc>
     </div>
   );
 }

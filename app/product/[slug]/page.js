@@ -1,24 +1,15 @@
 import { urlFor, client } from "@/sanity/lib/client";
 import Image from "next/image";
-import {
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiOutlineLeft,
-  AiOutlineShopping,
-  AiOutlineShareAlt,
-  AiOutlineShoppingCart,
-  AiOutlineTag,
-} from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 
-import { StateContext } from "@/app/context/StateContextProvider";
+import { useStateContext } from "../../context/StateContextProvider";
 import { Qty, TotalProductPrice } from "@/app/components";
 import { DecQty, IncQty, Thumbnails, AddToCartButton } from "@/app/components";
 
-import { Cart } from "@/app/components";
-
 import { ProductDesc, Product } from "@/app/components";
-import { useStateContext } from "@/app/context/StateContextProvider";
+
 import { App } from "@/app/components";
+import { BuyNow } from "@/app/components/States";
 
 async function Page({ params }) {
   const newData = await getProduct({ params });
@@ -28,57 +19,81 @@ async function Page({ params }) {
   const data = { data: { products } };
 
   return (
-    <div>
-      <div className="sm:flex w-screen sm:flex-row block bg-primary-lightbg sm:py-[100px] py-[50px] px-5 sm:px-[132px]">
-        <Thumbnails slugData={slugData} />
+    <div className=" w-screen ">
+      <div className="px-5 lg:py-[180px]  py-[50px]  lg:px-[180px]">
+        <div className="lg:flex  lg:flex-row overflow-hidden   block rounded-[40px] shadow-[0_0px_9px_3px_rgba(0,0,0,0.15)] ">
+          <div className="w-full ">
+            <Thumbnails slugData={slugData} />
+          </div>
 
-        <div className="flex sm:w-[540px] w-full flex-col items-center">
-          <div className="prodDetailsBox">
-            <h2 style={{ marginTop: 0, fontSize: 26 }}>{slugData.name}</h2>
-            <h2 style={{ fontSize: 26 }}>$ {slugData.price}.00</h2>
-            <div>
-              <span></span>
-            </div>
-            <h3 style={{ marginBottom: 5, marginTop: 40 }}>
-              Product Description
-            </h3>
-            <p style={{ marginTop: 0 }}>{slugData.desc}</p>
-            <h3 style={{ marginTop: 40 }}>Available Colors</h3>
-            <div className="availColBox">
-              <span className="availCol"></span>
-              <span className="availCol"></span>
-              <span className="availCol"></span>
-            </div>
-            <h3 style={{ marginTop: 50, marginBottom: 0 }}>Quantity</h3>
-
-            <div className="qtybox">
-              <div className="dec">
-                <DecQty />
+          <div className="block h-full  bg-[#272727] w-full">
+            <div className="w-full p-10 space-y-5 *:text-white">
+              <div>
+                <h2 className="text-[20px] text-white">{slugData.name}</h2>
+                <p className="text-[14px] text-white font-Quicksand text">
+                  $ {slugData.price}.00
+                </p>
+                <span className="inline-flex">
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-gray-400" />
+                </span>
               </div>
-              <div className="qty">
-                <Qty />
+              <div>
+                <p className="text-[15px] text-white leading-[35px] font-bold">
+                  Product Description
+                </p>
+                <p className="leading-tight text-white font-Quicksand">
+                  {slugData.desc}
+                </p>
               </div>
-              <div className="inc">
-                <IncQty />
+              <div>
+                <p className="text-white">Available Colors</p>
+                <div className="inline-flex space-x-3">
+                  <span className="w-[20px] h-[20px] rounded-md bg-red-600 "></span>
+                  <span className="w-[20px] h-[20px] rounded-md bg-green-600 "></span>
+                  <span className="w-[20px] h-[20px] rounded-md bg-purple-600 "></span>
+                  <span className="w-[20px] h-[20px] rounded-md bg-yellow-600 "></span>
+                </div>
               </div>
-            </div>
+              <div>
+                <p className="text-white">Quantity</p>
 
-            <div style={{ marginTop: 60 }}>
-              <TotalProductPrice slugData={slugData} />
-            </div>
-            <div className="prodPageButtons">
-              <AddToCartButton slugData={slugData} />
+                <div className="flex gap-5">
+                  <div className="flex w-[24px] h-[24px] justify-center items-end rounded-full bg-black">
+                    <DecQty />
+                  </div>
+                  <div className="text-white">
+                    <Qty color={"text-white"} />
+                  </div>
+                  <div className="flex w-[24px] h-[24px] justify-center items-end rounded-full bg-black">
+                    <IncQty />
+                  </div>
+                </div>
+              </div>
 
-              <button className="share">
-                <AiOutlineShareAlt style={{ fontSize: 18, marginRight: 8 }} />
-                SHARE
-              </button>
+              <div>
+                <p className="text-white pb-1">Total</p>
+
+                <p className="px-3 py-1 w-fit rounded-full text-white bg-black">
+                  <TotalProductPrice slugData={slugData} />
+                </p>
+              </div>
+
+              <div className="flex gap-3">
+                <BuyNow slugData={slugData} />
+
+                <div className="px-5 text-white text-nowrap w-[150px] bg-black py-2 rounded-[10px] text-[12px]">
+                  <AddToCartButton slugData={slugData} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="h-[300px] bg-primary-lightbg px-132px flex relative items-center">
+      <div className="h-[300px]  px-132px flex relative items-center">
         <ProductDesc data={data.data} />
       </div>
     </div>

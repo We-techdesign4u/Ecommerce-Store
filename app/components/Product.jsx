@@ -19,10 +19,8 @@ const Product = (props) => {
 
   const scrollableProdRef = useRef(null);
 
-  // console.log("data", data);<div className=" w-screen py-10 sm:py-0 sm:w-[960px]">
-
   return (
-    <div className="h-[350px] flex  items-center w-full lg:w-[800px] rounded-[17px] relative bg-[#E3E3E3]">
+    <div className="h-[350px] w-full max-w-full overflow-hidden rounded-[17px] relative bg-[#E3E3E3]">
       <div className="  absolute z-20   top-[50%] -ml-5  ">
         <span
           className=" hover:scale-110 ease-in-out duration-400 transition transform cursor-pointer inline-flex h-[50px] w-[50px] items-center justify-center bg-white rounded-full shadow-md"
@@ -31,15 +29,22 @@ const Product = (props) => {
           <AiOutlineLeft />
         </span>
       </div>
-      <div className="rounded-[20px] overflow-clip h-full relative">
-        <div className="absolute left-0  top-0 w-[60px] mask-l-from-60% mask-l-to-98% bg-[#ffffff4c] z-10  h-full"></div>
+      <div className=" rounded-[20px]  overflow-clip h-full relative">
         <div
-          className=" px-[45px] flex space-x-[20px] flex-row lg:w-[800px]  overflow-x-scroll scroll-smooth"
+          style={{
+            maskImage: "linear-gradient(to left, transparent 25%, black 75%)",
+            WebkitMaskImage:
+              "linear-gradient(to left, transparent 25%, black 75%)",
+          }}
+          className=" absolute left-0  top-0 w-[60px] backdrop-blur-[20px] z-10  h-full"
+        ></div>
+        <div
+          className=" px-[45px] flex gap-[20px] overflow-x-auto scroll-smooth w-full max-w-full"
           ref={scrollableProdRef}
         >
           {data.products.map((product) => (
             <div
-              className="group relative w-[250px] flex flex-col justify-end h-[320px]"
+              className="group relative w-[250px] shrink-0 flex flex-col justify-end h-[320px]"
               key={product._id}
             >
               <Link
@@ -72,15 +77,17 @@ const Product = (props) => {
                   </div>
                 </div>
               </Link>
-              {/* <button
-                onClick={() => addToCart(product, 1)}
-                className="group-hover:flex top-[50px] sm:left-[43%] left-10 lg:top-[300px] hover:scale-110 w-[30px] h-[30px] absolute z-10 rounded-full bg-black flex sm:hidden text-white justify-center items-center cursor-pointer transition transform duration-300 ease-in-out shadow-sm"
-              >
-                <AiOutlineShoppingCart />
-              </button> */}
             </div>
           ))}
         </div>
+        <div
+          style={{
+            maskImage: "linear-gradient(to right, transparent 25%, black 75%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 25%, black 75%)",
+          }}
+          className=" absolute right-0  top-0 w-[60px] backdrop-blur-[20px] z-10  h-full"
+        ></div>
       </div>
       <div className=" items-center top-[50%] absolute z-10 right-0 sm:-mr-6 mr-5 justify-center">
         <span

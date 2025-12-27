@@ -4,13 +4,13 @@ import Link from "next/link";
 const BottomBanner = () => {
   return (
     <section className="w-screen justify-items-center">
-      <div className="w-full max-w-[2500px] justify-items-center px-[180px] py-[100px] ">
-        <div className="w-fit h-fit flex lg:flex-row flex-col justify-center items-center p-10 rounded-[27px] bg-[#B6FF82]">
+      <div className="w-full px-5 lg:max-w-[2500px] justify-items-center lg:px-[180px] lg:py-[100px] pt-[100px] pb-[200px] ">
+        <div className=" space-y-10 flex lg:flex-row flex-col justify-center items-center p-10 rounded-[27px] bg-[#B6FF82]">
           <div className="space-y-6 lg:w-[446px] w-full ">
             <p className="text-[32px] font-bold leading-tight lg:max-w-[300px] text-black">
               Ready to get your designer bag?
             </p>
-            <p className="text-[17px] max-w-[510px] text-black leading-normal">
+            <p className="text-[17px] max-w-[510px] font-inter text-black leading-normal">
               Order today and take control of your fashion journey with smart
               purchases that leaves your audience with jaw dropping wow!
             </p>
@@ -34,10 +34,10 @@ const BottomBanner = () => {
               </Link>
             </div>
           </div>
-          <div className="w-[400px]  h-[200px] relative justify-items-center ">
-            <div className="h-[420px]   overflow-hidden -bottom-[20%] object-cover w-[390px] absolute">
+          <div className="lg:w-[400px] w-full h-[200px] lg:h-[200px] relative justify-items-center ">
+            <div className="lg:h-[420px] h-[350px] w-[300px] overflow-hidden lg:-bottom-10 -bottom-[70%] object-cover lg:w-[390px] absolute">
               <img
-                className="w-[580px] h-[630px] object-cover absolute -bottom-[30%]  "
+                className="lg:w-[580px] z-10  w-[500px] h-[500px] lg:h-[630px] object-cover absolute -bottom-[30%] lg:-bottom-[30%]  "
                 src="images/bag5.png"
               />
             </div>
