@@ -14,7 +14,7 @@ const HeroBanner = () => {
         }}
         className="w-[50%] h-full backdrop-blur-[5px] -z-[1] top-0 left-0"
       ></div>
-      <div className=" absolute lg:top-[220px] top-[140px] lg:left-[180px] px-5  lg:w-[500px] text-center lg:text-left ">
+      <div className=" absolute lg:top-[220px] top-[140px] lg:left-[180px] md:px-[100px] px-5 md:top-[220px] lg:px-0  lg:w-[500px] text-center lg:text-left ">
         <div className=" *:leading-[50px]">
           <p className="text-[40px]  text-gray-200 leading-none font-bold">
             Mordern Handcrafted
@@ -32,7 +32,7 @@ const HeroBanner = () => {
           special made for you, don't get it twisted made and crafted with
           quality materials and special made for you, don't.
         </p>
-        <div className="flex w-full sm:justify-start justify-center">
+        <div className="flex w-full lg:justify-start justify-center">
           <Link
             href={"/product/allproducts"}
             className="w-[202px] h-[54px] p-[6px] pl-[15px] bg-[#E8E8E8] shadow-[inset_0px_0px_9px_3px_rgba(0,0,0,0.25),0_0px_10px_5px_rgba(255,255,255,0.35)] rounded-[21px] border-[1px] border-[#82828275] flex justify-between items-center"

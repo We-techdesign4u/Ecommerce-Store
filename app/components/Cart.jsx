@@ -59,15 +59,15 @@ const Cart = () => {
   return (
     <div className="">
       {/**mobileCart */}
-      <div className="lg:hidden" ref={cartRef}>
+      <div className="md:hidden bg-black" ref={cartRef}>
         <div
           className={
             isShown
-              ? " transition duration-500 ease-in-out transform -top-[700px] translate-y-[760px] absolute flex"
-              : "transition duration-500 ease-in-out transform -top-[700px] -translate-y-[760px] absolute flex"
+              ? " transition duration-500 ease-in-out transform left-0 -top-[570px] translate-y-[650px] absolute flex"
+              : "transition duration-500 ease-in-out transform left-0 -top-[570px] -translate-y-[650px] absolute flex"
           }
         >
-          <div className="w-screen h-screen bg-[#45403d]">
+          <div className="w-screen h-[500px] bg-[#45403d]">
             <div>
               <span
                 className="*:text-yellow-500 ml-5 flex w-[130px] h-[30px] text-amber-500 items-center cursor-pointer"
@@ -153,7 +153,7 @@ const Cart = () => {
                     </div>
                   ))}
               </div>
-              <div className="w-full absolute z-10 bottom-[150px] ">
+              <div className="w-full absolute z-10 bottom-[100px] ">
                 <div className=" bg-[#45403d] mt-[10px] w-full h-[30px] *:text-white text-center ">
                   <p>Total: $ {totalProdutPrice}.00 USD</p>
                 </div>
@@ -186,12 +186,12 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className=" hidden lg:flex " ref={cartRef}>
+      <div className=" hidden md:flex " ref={cartRef}>
         <div
           className={
             isShown
-              ? "flex transition ease-in-out duration-500 transform absolute h-[600px] delay-200 top-[86px] -right-[550px] -translate-x-[540px]"
-              : " flex transition ease-in-out duration-500 transform absolute h-[600px] delay-200 top-[86px] -right-[550px] translate-x-[0px] "
+              ? "flex transition ease-in-out duration-500 transform absolute lg:h-[600px] h-[500px] delay-200 top-[86px] -right-[550px] -translate-x-[540px]"
+              : " flex transition ease-in-out duration-500 transform absolute lg:h-[600px] h-[500px] delay-200 top-[86px] -right-[550px] translate-x-[0px] "
           }
         >
           <div className="elementBox">
@@ -218,7 +218,7 @@ const Cart = () => {
               <p>Back to shop</p>
             </span>
 
-            <div className=" h-[450px]  flex flex-col overflow-y-scroll overflow-x-hidden">
+            <div className=" lg:h-[450px] h-[350px]  flex flex-col overflow-y-scroll overflow-x-hidden">
               <div className="NoProductinCart">
                 {cartItems.length < 1 && (
                   <div className="empty-cart">
@@ -297,10 +297,10 @@ const Cart = () => {
               </div>
             </div>
 
-            <div className="CartTotal">
+            <div className=" CartTotal">
               <p>Total: $ {totalProdutPrice}.00 USD</p>
             </div>
-            <div className="Checkout">
+            <div className=" Checkout">
               {cartItems.length < 1 && (
                 <span onClick={() => setIsShown(false)}>CONTINUE SHOPPING</span>
               )}

@@ -69,30 +69,30 @@ const Navbar = () => {
               />
             </Link>
             {/**mobile menu icon */}
-            <div className="lg:hidden block">
+            <div className="md:hidden block">
               <div className=" ">
                 {shownMenu ? (
                   <div>
                     <AiOutlineMenuUnfold
-                      className="text-white"
-                      size={35}
+                      className="text-gray-300"
+                      size={30}
                       onClick={() => setShownMenu(!shownMenu)}
                     ></AiOutlineMenuUnfold>
                   </div>
                 ) : (
                   <div>
                     <AiOutlineMenuFold
-                      className="text-white"
+                      className="text-gray-300"
                       onClick={() => setShownMenu(!shownMenu)}
-                      size={35}
+                      size={30}
                     ></AiOutlineMenuFold>
                   </div>
                 )}
               </div>
               {/**here it was */}
             </div>
-            <div className="hidden gap-[10px] lg:flex justify-between items-center ">
-              <ul className=" gap-[22px] px-[19px] hover:*:bg-white *:px-[15px] *:py-[8px] *:leading-tight *:rounded-[8px]  flex text-[19px] text-black font-bold ">
+            <div className="hidden gap-[10px] md:flex justify-between items-center ">
+              <ul className=" md:gap-[15px]  lg:gap-[22px] px-[19px] hover:*:bg-white *:px-[15px] *:py-[8px] *:leading-tight *:rounded-[8px]  flex text-[19px] text-black font-bold ">
                 <li>
                   <Link href={"/"}>HOME</Link>
                 </li>
@@ -153,7 +153,7 @@ const Navbar = () => {
           drag
           // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragMomentum={false}
-          className=" fixed bottom-10 right-10 cursor-grab shadow-md lg:hidden flex justify-center items-center w-[60px] h-[60px]  rounded-full bg-primary-dark  "
+          className=" fixed bottom-10 right-10 cursor-grab shadow-md md:hidden flex justify-center items-center w-[60px] h-[60px]  rounded-full bg-primary-dark  "
         >
           <button
             type="button"

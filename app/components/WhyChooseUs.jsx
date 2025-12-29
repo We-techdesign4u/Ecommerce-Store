@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
 
   return (
     <section className="bg-[#F5F5F5] w-screen ">
-      <div className="w-full relative space-y-[50px] flex flex-col-reverse lg:flex-row lg:px-[180px]  px-5 items-center py-[60px]  lg:py-[180px]">
+      <div className="w-full relative space-y-[50px] flex flex-col-reverse lg:flex-row lg:px-[180px]   px-5 items-center py-[60px]  lg:py-[180px]">
         <div className=" *:text-center lg:*:text-left lg:w-[560px] space-y-7">
           <p className="text-[32px] font-bold leading-normal text-black">
             Why Choose Us
@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
             These bags are specially made and crafted with quality materials and
             special made for you, don't get it.
           </p>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-10">
             <div className="sm:w-[250px] gap-[6px] flex flex-col justify-center sm:items-start items-center">
               <span className="w-[32px] h-[32px] rounded-[11px] bg-[#abf576] shadow-[inset_0px_0px_5px_0px_rgba(138,138,138,0.43),0_0px_3px_2px_rgba(180,245,147,0.65)] flex justify-center items-center">
                 <AiOutlineCar fill="black" size={17} />
@@ -72,7 +72,7 @@ const WhyChooseUs = () => {
               <p className="text-[17px] font-bold text-gray-800 text-center lg:text-left le leading-tight py-2">
                 Fast & free shipping
               </p>
-              <p className="text-[12px] text-black text-center lg:text-left leading-normal">
+              <p className="text-[12px] text-black text-center md:text-left lg:text-left leading-normal">
                 These bags are specially made and crafted with quality materials
                 and special made for you, don't get it.
               </p>
@@ -85,7 +85,7 @@ const WhyChooseUs = () => {
               <p className="text-[17px] font-bold text-gray-800 text-center lg:text-left le leading-tight py-2">
                 Easy to Shop
               </p>
-              <p className="text-[12px] text-black text-center lg:text-left leading-normal">
+              <p className="text-[12px] text-black text-center md:text-left lg:text-left leading-normal">
                 These bags are specially made and crafted with quality materials
                 and special made for you, don't get it.
               </p>
@@ -98,7 +98,7 @@ const WhyChooseUs = () => {
               <p className="text-[17px] font-bold text-gray-800 text-center lg:text-left le leading-tight py-2">
                 24/7 Support
               </p>
-              <p className="text-[12px] text-black text-center lg:text-left leading-normal">
+              <p className="text-[12px] text-black text-center md:text-left lg:text-left leading-normal">
                 These bags are specially made and crafted with quality materials
                 and special made for you, don't get it.
               </p>
@@ -111,7 +111,7 @@ const WhyChooseUs = () => {
               <p className="text-[17px] font-bold text-gray-800 text-center lg:text-left le leading-tight py-2">
                 Hassle Free
               </p>
-              <p className="text-[12px] text-black text-center lg:text-left leading-normal">
+              <p className="text-[12px] text-black text-center md:text-left lg:text-left leading-normal">
                 These bags are specially made and crafted with quality materials
                 and special made for you, don't get it.
               </p>

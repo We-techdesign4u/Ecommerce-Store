@@ -47,7 +47,7 @@ async function page() {
   return (
     <div className=" w-screen">
       <HeroBanner />
-      <div className="bg-primary-lightbg w-full px-5 sm:px-[132px] block relative items-center">
+      <div className="bg-primary-lightbg w-full px-5 md:px-[90px] lg:px-[132px] block relative justify-items-center ">
         <div className=" *:py-2 sm:flex flex-row block py-[45px] w-full">
           <CustomDropdown Options={BrandOptions} name={BrandOptionsLabel} />
           <CustomDropdown Options={ColorOptions} name={ColorOptionsLabel} />
@@ -69,9 +69,12 @@ export default page;
 export async function getData() {
   // Fetch data from external API
 
-  const products = await client.fetch('*[_type == "product"]', {
-    next: { cache: "no-store" },
-  });
+  const products = await client.fetch(
+    '*[_type == "product"]'
+    //   , {
+    //   cache: "no-store",
+    // }
+  );
 
   return { products };
 }

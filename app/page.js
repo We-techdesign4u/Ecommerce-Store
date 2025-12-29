@@ -39,9 +39,12 @@ async function Home() {
 export default Home;
 
 export async function getData() {
-  const products = await client.fetch('*[_type == "product"]', {
-    next: { cache: "force-cache" },
-  });
+  const products = await client.fetch(
+    '*[_type == "product"]'
+    //   , {
+    //   cache: "force-cache",
+    // }
+  );
 
   return { products };
 }

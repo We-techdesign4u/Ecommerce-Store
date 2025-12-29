@@ -27,7 +27,7 @@ const ModernBag = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   return (
     <section className=" w-screen  ">
-      <div className="flex-col flex w-full lg:flex-row h-fit relative items-center justify-between py-[60px] lg:py-[180px]  px-5 lg:px-[180px]">
+      <div className="flex-col flex w-full lg:flex-row h-fit relative items-center justify-between py-[60px] md:px-[80px] lg:py-[180px]  px-5 lg:px-[180px]">
         <div
           ref={ref}
           className="flex  justify-center items-center  w-full relative  h-auto"
@@ -41,7 +41,7 @@ const ModernBag = () => {
             variants={imageVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className=" object-cover  w-[320px] lg:h-[585px] lg:w-[512px] object-center"
+            className=" object-cover  w-[320px] lg:h-[585px] lg:w-[512px] md:w-[450px] object-center"
             src="/images/bag4.png"
           />
         </div>
@@ -65,7 +65,7 @@ const ModernBag = () => {
             </p>
           </div>
 
-          <div className="lg:w-[350px] flex flex-col justify-center sm:items-start items-center">
+          <div className="lg:w-[350px] flex flex-col justify-center lg:items-start items-center">
             <p className="text-[18px] text-[#757575] leading-tight py-2">
               Choose a color
             </p>

@@ -26,7 +26,7 @@ const ContactUs = () => {
       {/**Get intouch */}
       <div
         id="getintouch"
-        className="bg-white w-full justify-items-center px-5 lg:px-[220px] pt-20 lg:py-20"
+        className="bg-white w-full justify-items-center px-5 lg:px-[220px] md:px-[50px] pt-20 lg:py-20"
       >
         <div className="w-full lg:max-w-[1000px] justify-items-center">
           <div className="text-center *:text-black ">
@@ -41,8 +41,8 @@ const ContactUs = () => {
               Please feel free to reach out.
             </p>
           </div>
-          <div className="w-full pt-10 lg:flex-row flex-col-reverse  flex">
-            <div className="lg:w-[50%] w-full pt-20 flex items-center">
+          <div className="w-full pt-10 md:flex-row flex-col-reverse  flex">
+            <div className="lg:w-[50%] md:w-[40%] w-full pt-20 flex items-center">
               <div className="">
                 <div className="flex items-center mb-[20px] text-black font-interV">
                   <div className="*:text-black dark:text-gray-200 font-interV">

@@ -23,13 +23,13 @@ const BottomBanner = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   return (
     <section className="w-screen justify-items-center">
-      <div className="w-full px-5 lg:max-w-[2500px] justify-items-center lg:px-[180px] lg:py-[100px] pt-[100px] pb-[200px] ">
+      <div className="w-full px-5 md:px-1 lg:max-w-[2500px] md:w-full justify-items-center lg:px-[180px] lg:py-[100px] pt-[100px] pb-[200px] ">
         <div
           ref={ref}
-          className=" space-y-10 flex lg:flex-row flex-col justify-center items-center p-10 rounded-[27px] bg-[#B6FF82]"
+          className=" space-y-10 flex lg:flex-row md:flex-row flex-col justify-center items-center p-6 rounded-[27px] bg-[#B6FF82]"
         >
-          <div className="space-y-6 lg:w-[446px] w-full ">
-            <p className="text-[32px] font-bold leading-tight lg:max-w-[300px] text-black">
+          <div className="space-y-6  lg:w-[446px] w-full md:w-[600px] ">
+            <p className="text-[32px] font-bold leading-tight  lg:max-w-[300px] text-black">
               Ready to get your designer bag?
             </p>
             <p className="text-[17px] max-w-[510px] font-inter text-black leading-normal">
@@ -56,8 +56,8 @@ const BottomBanner = () => {
               </Link>
             </div>
           </div>
-          <div className="lg:w-[400px] w-full h-[200px] lg:h-[200px] relative justify-items-center ">
-            <div className="lg:h-[420px] h-[350px] w-[300px]  lg:-bottom-10 -bottom-[70%] object-cover lg:w-[390px] absolute">
+          <div className="lg:w-[400px]  w-full h-[200px] lg:h-[200px] relative justify-items-center ">
+            <div className="lg:h-[420px] h-[350px] w-[300px]  lg:-bottom-10 -bottom-[70%] md:bottom-0 object-cover lg:w-[390px] absolute">
               <motion.img
                 alt="Bag"
                 variants={imageVariants}

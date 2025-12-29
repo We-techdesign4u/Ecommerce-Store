@@ -4,17 +4,17 @@ import Link from "next/link";
 
 const SectionTwo = ({ data }) => {
   return (
-    <section className=" w-screen px-5 lg:px-[180px] lg:py-[150px] py-[60px]">
+    <section className=" w-screen px-5 lg:px-[180px] lg:py-[150px] py-[60px] md:px-[80px]">
       <div className="  py-5 flex flex-col lg:flex-row  space-y-[50px] lg:space-y-0  w-[100%]">
         <div className="items-center space-y-6 lg:max-w-[300px]   lg:pr-10  w-full sm:items-start">
-          <p className="font-bold leading-none text-black text-[35px] text-center sm:text-left">
+          <p className="font-bold leading-none text-black text-[35px] text-center lg:text-left">
             Crafted with excellent material.
           </p>
-          <p className="text-[15px] leading-normal font-Quicksand text-center sm:text-left">
+          <p className="text-[15px] leading-normal font-Quicksand text-center lg:text-left">
             These bags are specially made and crafted with quality materials and
             special made for you, don't get it twisted.
           </p>
-          <div className="flex w-full sm:justify-start justify-center">
+          <div className="flex w-full lg:justify-start justify-center">
             <Link
               href={"/product/allproducts"}
               className="w-[170px] h-[54px] p-[6px] pl-[15px] bg-black shadow-[inset_0px_0px_9px_6px_rgba(255,255,255,0.27),0_0px_10px_5px_rgba(0,0,0,0.35)] rounded-[21px] border-[1px] border-[#82828275] flex justify-between items-center"

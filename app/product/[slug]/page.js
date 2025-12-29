@@ -21,13 +21,13 @@ async function Page({ params }) {
   return (
     <div className=" w-screen ">
       <div className="px-5 lg:py-[180px]  py-[50px]  lg:px-[180px]">
-        <div className="lg:flex  lg:flex-row overflow-hidden   block rounded-[40px] shadow-[0_0px_9px_3px_rgba(0,0,0,0.15)] ">
+        <div className="md:flex  md:flex-row overflow-hidden   block rounded-[40px] shadow-[0_0px_9px_3px_rgba(0,0,0,0.15)] ">
           <div className="w-full ">
             <Thumbnails slugData={slugData} />
           </div>
 
           <div className="block h-full  bg-[#272727] w-full">
-            <div className="w-full p-10 space-y-5 *:text-white">
+            <div className="w-full lg:p-10 p-5 space-y-5 *:text-white">
               <div>
                 <h2 className="text-[20px] text-white">{slugData.name}</h2>
                 <p className="text-[14px] text-white font-Quicksand text">
@@ -88,7 +88,7 @@ async function Page({ params }) {
               <div className="flex gap-3">
                 <BuyNow slugData={slugData} />
 
-                <div className="px-5 text-white text-nowrap w-[150px] bg-black py-2 rounded-[10px] text-[12px]">
+                <div className="px-3 text-white text-nowrap w-[130px] bg-black py-2 rounded-[10px] text-[12px]">
                   <AddToCartButton slugData={slugData} />
                 </div>
               </div>
@@ -119,15 +119,12 @@ async function getProduct({ params }) {
   const res = await client.fetch(
     `*[_type == "product" && slug.current == "${slug}"][0]`
     // ,
-    // {
-    //   next: { cache: "force-cache" },
-    // }
+    // { cache: "force-cache" }
   );
   const products = await client.fetch(
     `*[_type == "product"]`
-    //   ,
-    //   {
-    //   next: { cache: "force-cache" },
+    //   , {
+    //   cache: "force-cache",
     // }
   );
 

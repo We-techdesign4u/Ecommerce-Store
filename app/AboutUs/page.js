@@ -9,7 +9,9 @@ const AboutUs = () => {
 
   return (
     <div className="w-screen h-screen space-y-6 flex justify-center items-center flex-col  pt-14">
-      <p className="text-[45px] font-thin text-red-600">Under Construction</p>
+      <p className="text-[45px] font-thin text-center leading-tight text-red-600">
+        Under Construction
+      </p>
       <svg
         ref={ref}
         width="100"

@@ -125,7 +125,7 @@ export const Thumbnails = ({ slugData }) => {
               duration: 0.4,
               ease: "easeInOut",
             }}
-            className="absolute lg:max-h-[500px] max-h-[300px] max-w-[300px] lg:max-w-[500px] left-[150px] object-contain"
+            className="absolute lg:max-h-[500px] max-h-[300px] max-w-[300px] lg:max-w-[500px] lg:left-[150px] -left-[10px] object-contain"
           />
         </AnimatePresence>
       </div>
@@ -191,30 +191,11 @@ export const FilteredProduct = (data) => {
 
   const filteritems = () => {
     if (filters.length > 0) {
-      ////1
-      // let temp = products.filter((item) =>
-      //   filters.some((word) => item.name.includes(word))
-      // );
-      ////2
       const filteredarr = products.filter((item) =>
         filters.some((word) => item.name.includes(word.option))
       );
 
-      ///////3
-      // let tempItems = filters.map((selected) => {
-      //   let temp = products.filter((item) => item.name.includes(selected));
-
-      //   return temp;
-      // });
-
       setFiltered(filteredarr);
-
-      ////// delete here
-      // let temp = products.filter((item) =>
-      //   filters.some((word) => item.name.includes(word))
-      // );
-
-      // setFiltered(temp);
     } else {
       setFiltered(products);
     }
@@ -229,7 +210,7 @@ export const FilteredProduct = (data) => {
   // const filtereditems = data.products.filter((item) => item.name !== item.slug);
 
   return (
-    <div className=" grid gap-x-[30px] gap-y-[20px] grid-cols-1 items-center justify-center sm:grid-cols-4 pb-[90px]">
+    <div className="  grid sm:gap-x-[30px] gap-y-[20px] w-fit grid-cols-1 justify-item-center md:grid-cols-2 lg:grid-cols-4 pb-[90px]">
       {filtered.map((product) => (
         <Link href={`/product/${product.slug.current}`}>
           <div
@@ -242,7 +223,7 @@ export const FilteredProduct = (data) => {
               </span>
 
               <img
-                className="h-[280px] w-[220px] object-center object-cover transition transform duration-500 ease-in-out hover:scale-110"
+                className="h-[280px] w-[220px] object-right object-cover transition transform duration-500 ease-in-out hover:scale-110"
                 src={urlFor(product.image[0]).url()}
               />
             </div>

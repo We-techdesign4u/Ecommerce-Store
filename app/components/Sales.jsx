@@ -3,7 +3,7 @@ import React from "react";
 const Sales = () => {
   return (
     <section className="w-screen bg-[#EDFFE0] ">
-      <div className="w-full justify-between gap-y-6 flex lg:flex-row flex-col lg:px-[180px] py-[50px]  max-w-[2500px] ">
+      <div className="w-full justify-between gap-y-10 md:flex-row flex lg:flex-row flex-col lg:px-[180px] py-[50px] md:px-[50px]  max-w-[2500px] ">
         <div className="justify-items-center *:text-center space-y-2">
           <p className="text-[35px] text-[#307002]">25,350+</p>
           <p className="text-[14px] text-[#262626]">Happy Customers</p>

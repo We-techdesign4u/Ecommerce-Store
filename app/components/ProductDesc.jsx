@@ -2,7 +2,12 @@
 import React from "react";
 import Link from "next/link";
 import { urlFor } from "../../sanity/lib/client";
-import { AiFillStar, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import {
+  AiFillStar,
+  AiOutlineLeft,
+  AiOutlineRight,
+  AiOutlineStar,
+} from "react-icons/ai";
 import { useStateContext } from "../context/StateContextProvider";
 import { useRef } from "react";
 
@@ -29,9 +34,9 @@ const ProductDesc = (props) => {
           {data.products.map((product) => (
             <div className="" key={product._id}>
               <Link className="" href={`/product/${product.slug.current}`}>
-                <div className="hover:bg-[#dce5e4] border-[1px] border-gray-300 bg-[#e6e6e6] h-[170px] flex rounded-[10px] p-[20px]">
+                <div className="hover:bg-[#dce5e4] border-[1px] border-gray-300 bg-[#e6e6e6] h-[170px] flex rounded-[10px] p-[10px]">
                   <img
-                    className=" h-[140px] object-cover"
+                    className=" h-[140px] w-[120px] object-right pr-3  object-cover"
                     src={urlFor(product.image && product.image[0])}
                   />
                   <div className="h-auto space-y-2 w-[280px] sm:mr-[10px] ">
@@ -44,7 +49,7 @@ const ProductDesc = (props) => {
                           <AiFillStar size={15} className="fill-yellow-400" />
                           <AiFillStar size={15} className="fill-yellow-400" />
                           <AiFillStar size={15} className="fill-yellow-400" />
-                          <AiFillStar size={15} className="fill-gray-400" />
+                          <AiOutlineStar size={15} className="fill-gray-400" />
                         </span>
                       </div>
                     </div>
