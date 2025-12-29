@@ -29,8 +29,6 @@ function CustomDropdown({ Options, name, selectedValue, OnChange }) {
 
     setSelectedOption(option);
     setIsOpen(false);
-
-    console.log(filters);
   };
 
   let dropdownRef = useRef();

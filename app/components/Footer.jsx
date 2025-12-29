@@ -12,26 +12,15 @@ const Footer = () => {
       <div className="sm:flex sm:flex-row  justify-between">
         <div className=" w-[300px]">
           <img src="images/baggywhite.png" className="w-[120px] " alt="" />
-          <p
-            style={{
-              color: "#d3d3d3",
-              lineHeight: 1.4,
-            }}
-          >
+          <p className="text-white text-[14px] leading-tight">
             There are many variations message of Loren Ipsum available, but this
             one is it for me, yes this is more like it because I still need more
             text to fill up this space.
           </p>
         </div>
         <div className="footerQuickLinks">
-          <h3
-            style={{
-              color: "#d3d3d3",
-            }}
-          >
-            Quick Links
-          </h3>
-          <ul>
+          <p className="text-16px font-bold text-white">Quick Links</p>
+          <ul className="">
             <li>
               <Link href="./">Home</Link>
             </li>
@@ -60,7 +49,7 @@ const Footer = () => {
               lineHeight: 1.4,
             }}
           >
-            +234 80 340 77 133, kindly reach out for more designs like this one,
+            +234 70 699 52 339, kindly reach out for more designs like this one,
             I probably need more text here too since i see it's small.
           </p>
         </div>
@@ -72,15 +61,15 @@ const Footer = () => {
             For Latest News & Update
           </p>
 
-          <form className="flex flex-row justify-between items-center p-[5px] h-[60px] sm:w-[350px] w-full bg-Primary-light rounded-[50px]">
+          <form className="flex flex-row justify-between items-center p-[5px] h-[60px] sm:w-[350px] w-full bg-[#abf576] rounded-[50px]">
             <input
-              className=" placeholder:text-gray-800 h-[40px] pl-2 rounded-0 border-0 active:border-transparent border-transparent w-fit bg-transparent"
+              className=" placeholder:text-gray-800 h-[40px] pl-2 rounded-0 border-0 active:border-transparent border-transparent w-full bg-transparent"
               type="text"
               placeholder="Enter your email"
               color=""
             />
 
-            <button className=" flex items-center justify-center w-[85px] h-[40px] bg-primary-dark text-[16px] text-white rounded-[50px] ">
+            <button className=" flex items-center justify-center px-5 h-[40px] bg-primary-dark text-[16px] text-white rounded-[50px] ">
               Submit
             </button>
           </form>

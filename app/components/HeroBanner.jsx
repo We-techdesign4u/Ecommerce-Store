@@ -1,10 +1,11 @@
 import React from "react";
 import { Button } from ".";
 import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
 
 const HeroBanner = () => {
   return (
-    <div className=" w-screen h-screen  bg-[url(/images/backgroundNew.jpg)] bg-[right_34%_bottom] bg-cover bg-no-repeat ">
+    <div className=" relative w-screen h-screen  bg-[url(/images/backgroundNew.jpg)] bg-[right_34%_bottom] bg-cover bg-no-repeat ">
       <div
         style={{
           maskImage: "linear-gradient(to left, transparent 25%, black 35%)",
@@ -13,20 +14,20 @@ const HeroBanner = () => {
         }}
         className="w-[50%] h-full backdrop-blur-[5px] -z-[1] top-0 left-0"
       ></div>
-      <div className=" absolute top-[220px] lg:left-[180px] px-5  lg:w-[500px] text-center lg:text-left ">
+      <div className=" absolute lg:top-[220px] top-[140px] lg:left-[180px] px-5  lg:w-[500px] text-center lg:text-left ">
         <div className=" *:leading-[50px]">
           <p className="text-[40px]  text-gray-200 leading-none font-bold">
             Mordern Handcrafted
           </p>
-          <span className=" bg-[#abf576] text-[40px] font-inter leading-none font-bold text-black p-1 rounded-md">
+          <span className=" bg-[#abf576] text-[40px] leading-none font-bold text-black p-1 rounded-md">
             Quality
           </span>
-          <span className="text-white font-inter italic font-bold text-[40px] leading-none">
+          <span className="text-white  font-bold text-[40px] leading-none">
             {"  "}Designs.
           </span>
         </div>
 
-        <p className="text-white pt-10 pb-10 font-Quicksand text-[18px]">
+        <p className="text-white leading-tight pt-10 pb-10 font-Quicksand text-[18px]">
           These bags are specially made and crafted with quality materials and
           special made for you, don't get it twisted made and crafted with
           quality materials and special made for you, don't.

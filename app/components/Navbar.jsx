@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Cart, ShowCart } from "./";
 import { useStateContext } from "../context/StateContextProvider";
 import { motion } from "motion/react";
+
 import Image from "next/image";
 import images from "@/public/constant/images";
 

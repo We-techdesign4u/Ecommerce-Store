@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   AiOutlineCar,
@@ -6,11 +7,55 @@ import {
   AiOutlineShoppingCart,
   AiOutlineSmile,
 } from "react-icons/ai";
+import { useRef } from "react";
+import { motion, useInView } from "motion/react";
 
 const WhyChooseUs = () => {
+  const imageVariants = {
+    hidden: {
+      x: 200,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+  const textContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        delayChildren: 0.9, // waits until image finishes
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const letter = {
+    hidden: {
+      y: 40,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: "easeOut",
+        duration: 0.4,
+      },
+    },
+  };
+  const brand = "FENDI";
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <section className="bg-[#F5F5F5] w-screen ">
-      <div className="w-full relative space-y-[50px] flex flex-col-reverse lg:flex-row lg:px-[180px]  px-5 items-center py-[100px]  lg:py-[180px]">
+      <div className="w-full relative space-y-[50px] flex flex-col-reverse lg:flex-row lg:px-[180px]  px-5 items-center py-[60px]  lg:py-[180px]">
         <div className=" *:text-center lg:*:text-left lg:w-[560px] space-y-7">
           <p className="text-[32px] font-bold leading-normal text-black">
             Why Choose Us
@@ -74,14 +119,35 @@ const WhyChooseUs = () => {
           </div>
         </div>
 
-        <div className="relative h-[400px]  w-fit flex justify-center items-center lg:h-[500px]">
-          <p className="lg:text-[165px] text-[100px] leading-tight font-bold absolute lg:-top-[80px] top-0 -z-0 text-black">
-            FENDI
-          </p>
-          <div className="w-[590px]"></div>
-          <img
-            className="w-[390px] absolute z-10 object-cover lg:h-[650px] lg:w-[590px] object-center "
+        <div
+          ref={ref}
+          className="relative h-[400px] w-fit flex justify-center items-center lg:h-[500px] "
+        >
+          {/* TEXT */}
+          <motion.p
+            variants={textContainer}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="lg:text-[165px] text-[100px] leading-tight font-bold absolute lg:-top-[80px] top-0 -z-0 text-black flex"
+          >
+            {brand.split("").map((char, i) => (
+              <motion.span key={i} variants={letter} className="inline-block">
+                {char}
+              </motion.span>
+            ))}
+          </motion.p>
+
+          {/* SPACER */}
+          <div className="w-[590px]" />
+
+          {/* IMAGE */}
+          <motion.img
             src="/images/bags5.png"
+            alt="Bag"
+            variants={imageVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="w-[390px] absolute z-10 object-cover lg:h-[650px] lg:w-[590px] object-center"
           />
         </div>
       </div>

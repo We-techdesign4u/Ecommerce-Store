@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const SectionTwo = ({ data }) => {
   return (
-    <section className=" w-screen px-5 lg:px-[180px] py-[150px]">
+    <section className=" w-screen px-5 lg:px-[180px] lg:py-[150px] py-[60px]">
       <div className="  py-5 flex flex-col lg:flex-row  space-y-[50px] lg:space-y-0  w-[100%]">
         <div className="items-center space-y-6 lg:max-w-[300px]   lg:pr-10  w-full sm:items-start">
           <p className="font-bold leading-none text-black text-[35px] text-center sm:text-left">
             Crafted with excellent material.
           </p>
-          <p className="text-[15px] leading-normal text-center sm:text-left">
+          <p className="text-[15px] leading-normal font-Quicksand text-center sm:text-left">
             These bags are specially made and crafted with quality materials and
             special made for you, don't get it twisted.
           </p>

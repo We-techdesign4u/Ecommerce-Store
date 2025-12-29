@@ -52,10 +52,13 @@ async function Page({ params }) {
               <div>
                 <p className="text-white">Available Colors</p>
                 <div className="inline-flex space-x-3">
-                  <span className="w-[20px] h-[20px] rounded-md bg-red-600 "></span>
-                  <span className="w-[20px] h-[20px] rounded-md bg-green-600 "></span>
-                  <span className="w-[20px] h-[20px] rounded-md bg-purple-600 "></span>
-                  <span className="w-[20px] h-[20px] rounded-md bg-yellow-600 "></span>
+                  {slugData.color?.map((item, i) => (
+                    <span
+                      style={{ backgroundColor: `${item}` }}
+                      key={i}
+                      className={`h-[20px] w-[20px] rounded-md `}
+                    ></span>
+                  ))}
                 </div>
               </div>
               <div>
@@ -114,14 +117,19 @@ async function getProduct({ params }) {
   const slug = params.slug;
 
   const res = await client.fetch(
-    `*[_type == "product" && slug.current == "${slug}"][0]`,
-    {
-      next: { cache: "force-cache" },
-    }
+    `*[_type == "product" && slug.current == "${slug}"][0]`
+    // ,
+    // {
+    //   next: { cache: "force-cache" },
+    // }
   );
-  const products = await client.fetch(`*[_type == "product"]`, {
-    next: { cache: "force-cache" },
-  });
+  const products = await client.fetch(
+    `*[_type == "product"]`
+    //   ,
+    //   {
+    //   next: { cache: "force-cache" },
+    // }
+  );
 
   return { props: { res, products } };
 }

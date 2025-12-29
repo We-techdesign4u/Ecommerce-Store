@@ -13,6 +13,7 @@ import {
   AiOutlineUser,
   AiFillPlusCircle,
   AiFillStar,
+  AiOutlineStar,
 } from "react-icons/ai";
 
 import Link from "next/link";
@@ -95,13 +96,7 @@ export const Thumbnails = ({ slugData }) => {
     setDirection(i > index ? 1 : -1);
     setIndex(i);
   };
-  console.log(slugData, "checkcolor");
-  const colorMap = {
-    purple: "bg-purple-500",
-    red: "bg-red-500",
-    blue: "bg-blue-500",
-    gren: "bg-green-500",
-  };
+  // console.log(slugData, "checkcolor");
 
   return (
     <div className="flex w-full h-full space-y-10 flex-col justify-center items-center">
@@ -130,7 +125,7 @@ export const Thumbnails = ({ slugData }) => {
               duration: 0.4,
               ease: "easeInOut",
             }}
-            className="absolute max-h-[500px] max-w-[500px] left-[150px] object-contain"
+            className="absolute lg:max-h-[500px] max-h-[300px] max-w-[300px] lg:max-w-[500px] left-[150px] object-contain"
           />
         </AnimatePresence>
       </div>
@@ -212,8 +207,6 @@ export const FilteredProduct = (data) => {
       //   return temp;
       // });
 
-      console.log(filters);
-
       setFiltered(filteredarr);
 
       ////// delete here
@@ -240,27 +233,47 @@ export const FilteredProduct = (data) => {
       {filtered.map((product) => (
         <Link href={`/product/${product.slug.current}`}>
           <div
-            className="block bg-white w-[280px] border-[0.5px] border-Primary-light rounded-[10px] transform transition duration-300 ease-in-out hover:shadow-md "
+            className="block bg-white w-[250px] p-2 pb-1 border-[0.5px] border-Primary-light rounded-[30px] transform transition duration-300 ease-in-out hover:shadow-md "
             key={product._id}
           >
-            <div className="rounded-t-[10px] relative w-full h-[280px] bg-[#dce5e4] ">
-              <AiFillPlusCircle className="absolute top-[10px] right-[10px] w-[20px] h-[20px]  text-primary-dark transition transform z-10 duration-500 ease-in-out hover:scale-110" />
+            <div className="rounded-[20px] relative w-full h-[280px] bg-[#dce5e4] ">
+              <span className="px-2 py-2  rounded-full bg-[#9090905a] absolute top-[10px] right-[10px]   transition transform z-10 duration-500 ease-in-out hover:scale-110">
+                <AiOutlineShoppingCart className="" size={15} />
+              </span>
+
               <img
                 className="h-[280px] w-[220px] object-center object-cover transition transform duration-500 ease-in-out hover:scale-110"
                 src={urlFor(product.image[0]).url()}
               />
             </div>
-            <div className="px-3">
-              <div className="flex items-center h-[30px] *:w-[15px]">
-                <AiFillStar className=" " />
-                <AiFillStar className="" />
-                <AiFillStar className="" />
-                <AiFillStar className="" />
-                <AiFillStar className="" />
-                <p>40</p>
+            <div className="px-3 space-y-2 py-2">
+              <div>
+                <p className="text-[15px] leading-none text-black font-bold">
+                  {product.name}
+                </p>
+                <div className="flex space-x-2">
+                  <span className="inline-flex">
+                    <AiFillStar size={15} className="fill-yellow-400" />
+                    <AiFillStar size={15} className="fill-yellow-400" />
+                    <AiFillStar size={15} className="fill-yellow-400" />
+                    <AiFillStar size={15} className="fill-yellow-400" />
+                    <AiOutlineStar size={15} className=" fill-gray-400  " />
+                  </span>
+                  <p>{"(220k)"}</p>
+                </div>
               </div>
-              <p className="">{product.name}</p>
-              <h4 className="py-3">$ {product.price}.00</h4>
+
+              <p className="leading-none text-[12px] w-full text-ellipsis overflow-hidden whitespace-nowrap  ">
+                {product.desc}
+              </p>
+              <div className="flex justify-between w-full">
+                <p className="text-[15px] leading-tight text-black font-bold">
+                  $ {product.price}.00
+                </p>
+                <div className="px-6 shadow-lg *:text-white bg-black rounded-full py-1">
+                  <p>Buy</p>
+                </div>
+              </div>
             </div>
           </div>
         </Link>

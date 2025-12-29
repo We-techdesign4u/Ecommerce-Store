@@ -53,7 +53,7 @@ const Product = (props) => {
               >
                 <div className=" absolute -top-[150px] object-center justify-items-center hover:scale-110 object-cover  h-[220px] w-full  overflow-hidden transition transform duration-300 ease-in-out">
                   <img
-                    className="absolute w-[190px]  -bottom-[15%] "
+                    className="absolute w-[230px] -left-[30px]  -bottom-[15%] "
                     src={urlFor(product.image && product.image[0])}
                     alt={"product._type"}
                   />
@@ -89,7 +89,7 @@ const Product = (props) => {
           className=" absolute right-0  top-0 w-[60px] backdrop-blur-[20px] z-10  h-full"
         ></div>
       </div>
-      <div className=" items-center top-[50%] absolute z-10 right-0 sm:-mr-6 mr-5 justify-center">
+      <div className=" items-center top-[50%] absolute z-10 right-0 -mr-6  justify-center">
         <span
           className="hover:scale-110 ease-in-out duration-400 transition transform cursor-pointer inline-flex h-[50px] w-[50px] items-center justify-center bg-white rounded-full shadow-md"
           onClick={() => handleScrollRight(scrollableProdRef)}

@@ -14,21 +14,27 @@ async function ProductCard() {
     <div>
       {data.products.map((product) => (
         <Link href={`/product/${product.slug.current}`}>
-          <div className="allProduct" key={product._id}>
-            <div className="allProductImg">
+          <div
+            className="allProduct block bg-white w-[280px] p-3 rounded-[40px] cursor-pointer "
+            key={product._id}
+          >
+            <div className="allProductImg w-full h-[250px] flex justify-center items-center relative">
               <AiFillPlusCircle className="allProductAddtoCart" />
               <img src={urlFor(product.image[0]).url()} />
             </div>
-            <div className="allProductRatingCont">
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <AiFillStar className="ratingStar" />
-              <p>40</p>
+            <div className="">
+              <p className="font-bold">{product.name}</p>
+              <div className="flex  justify-between">
+                <p>${product.price}.00</p>
+                <span className="inline-flex">
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-yellow-400" />
+                  <AiFillStar size={15} className="fill-gray-400" />
+                </span>
+              </div>
             </div>
-            <p className="allProductName">{product.name}</p>
-            <h4 className="allProductPrice">$ {product.price}.00</h4>
           </div>
         </Link>
       ))}

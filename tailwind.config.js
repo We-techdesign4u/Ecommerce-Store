@@ -12,9 +12,11 @@ module.exports = {
         secondary: "#e0c40f",
       },
       fontFamily: {
+        Carattere: ["Carattere"],
         inter: ["Inter", "sans-serif"],
         Quicksand: ["Quicksand", "sans-serif"],
         Phudu: ["Phudu", "sans-serif"],
+        Quin: ["Quintessential", "serif"],
       },
     },
   },

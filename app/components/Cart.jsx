@@ -309,7 +309,6 @@ const Cart = () => {
                   onClick={() =>
                     handleFlutterPayment({
                       callback: (response) => {
-                        console.log(response);
                         closePaymentModal();
                       },
                       onClose: () => {},

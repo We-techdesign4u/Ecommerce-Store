@@ -1,20 +1,46 @@
+"use client";
 import React from "react";
 import {
   AiOutlineCar,
   AiOutlineCheck,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { useRef } from "react";
+import { motion, useInView } from "motion/react";
 
 const ModernBag = () => {
+  const imageVariants = {
+    hidden: {
+      x: -120,
+      opacity: 1,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   return (
     <section className=" w-screen  ">
-      <div className="flex-col flex w-full lg:flex-row h-fit relative items-center justify-between py-10 lg:py-[180px]  px-5 lg:px-[180px]">
-        <div className="flex  justify-center items-center  w-full relative  h-auto">
+      <div className="flex-col flex w-full lg:flex-row h-fit relative items-center justify-between py-[60px] lg:py-[180px]  px-5 lg:px-[180px]">
+        <div
+          ref={ref}
+          className="flex  justify-center items-center  w-full relative  h-auto"
+        >
           <p className="lg:text-[165px] text-[100px] -z-10 -rotate-90 leading-tight font-bold absolute -left-[80px] text-black">
             GUCCI
           </p>
 
-          <img
+          <motion.img
+            alt="Bag"
+            variants={imageVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
             className=" object-cover  w-[320px] lg:h-[585px] lg:w-[512px] object-center"
             src="/images/bag4.png"
           />
